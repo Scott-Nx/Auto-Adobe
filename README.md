@@ -4,7 +4,7 @@ Automated grant Adobe acess for KMUTNB Student
 Urmmm, its just simple request lol.
 
 ## How to use?
-1. Clone/Download This project
+1. Fork This project
 2. Create Secret in Repository secrets
    
    Repository secrets:
