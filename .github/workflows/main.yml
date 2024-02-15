@@ -1,0 +1,32 @@
+name: Auto grant Adobe
+
+
+on:
+  push:
+    branches-ignore:
+      - "releases/**"
+  schedule:
+    - cron: "10 5 * * 1"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+          python -m pip install --upgrade pip
+          pip install requests
+          pip install python-dotenv
+    - name: 'Create env file'
+      run: |
+        touch .env
+        echo KMUTNB_USERNAME=${{ secrets.KMUTNB_USERNAME }} >> .env
+        echo KMUTNB_PASSWORD=${{ secrets.KMUTNB_PASSWORD }} >> .env
+        cat .env
+    - name: Running Payload
+      run: |
+        python payload_nodotenv.py
