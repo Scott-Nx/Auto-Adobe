@@ -6,7 +6,7 @@ on:
     branches-ignore:
       - "releases/**"
   schedule:
-    - cron: "10 5 * * 1"
+    - cron: "5 11 * * 0"
 jobs:
   build:
     runs-on: ubuntu-latest
