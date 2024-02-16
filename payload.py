@@ -1,3 +1,24 @@
+import requests as rq
+from dotenv import load_dotenv, dotenv_values
+import os
+
+# LOGIN URL VARIABLE
+login_url = "https://software.kmutnb.ac.th/login/"
+loggedin_url = "https://software.kmutnb.ac.th/download/"
+adobe_url = "https://software.kmutnb.ac.th/adobe-reserve/processa.php"
+
+# EXAMPLE .ENV FILE
+
+# .env
+# KMUTNB_USERNAME=s66xxxxxxxxxxx
+# KMUTNB_PASSWORD=wtfisthisuniversity
+
+# DIRECTORY OF FILE
+# -- adobe-kmutnb
+# |
+# - > .env
+# - > payload.py
+
 # ENV FILE STUFF
 
 load_dotenv()
