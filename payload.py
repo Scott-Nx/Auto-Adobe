@@ -68,5 +68,5 @@ adobe_data = {"userId": '', "date_expire": "2024-02-19", "status_number": "0", "
 # USING SESSION FOR HOLD SESSION FOR GRANT ADOBE ACCESS
 with rq.session() as rqss:
     rqss.post(login_url, headers=payload_headers, data=payload_data, verify=False)
-    req3 = qsss.post(adobe_url, headers=adobe_headers, data=adobe_data,verify=False)
+    req3 = rqss.post(adobe_url, headers=adobe_headers, data=adobe_data,verify=False)
     print(req3.text)
