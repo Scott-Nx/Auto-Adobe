@@ -1,24 +1,3 @@
-import requests as rq
-from dotenv import load_dotenv, dotenv_values
-import os
-
-# LOGIN URL VARIABLE
-login_url = "https://software.kmutnb.ac.th/login/"
-loggedin_url = "https://software.kmutnb.ac.th/download/"
-adobe_url = "https://software.kmutnb.ac.th/adobe-reserve/processa.php"
-
-# EXAMPLE .ENV FILE
-
-# .env
-# KMUTNB_USERNAME=s66xxxxxxxxxxx
-# KMUTNB_PASSWORD=wtfisthisuniversity
-
-# DIRECTORY OF FILE
-# -- adobe-kmutnb
-# |
-# - > .env
-# - > payload.py
-
 # ENV FILE STUFF
 
 load_dotenv()
@@ -39,13 +18,13 @@ payload_headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-User": "?1", "Sec-Fetch-Dest": "document", "Referer": "https://software.kmutnb.ac.th/login/", "Accept-Encoding": "gzip, deflate, br", "Accept-Language": "th-TH,th;q=0.9", "Connection": "close"}
 
 # DATA PAYLOAD // GRAB FROM .ENV FILE
-payload_data = {"myusername": username, "mypassword": password, "Submit": ''} 
+payload_data = { "myusername": username, "mypassword": password, "Submit": ''} 
 
 
 # HEADER AND DATA (Adobe Process)
 adobe_url = "https://software.kmutnb.ac.th:443/adobe-reserve/add2.php"
-adobe_headers = {"
-                 Cache-Control": "max-age=0",
+adobe_headers = {
+                 "Cache-Control": "max-age=0",
                  "Sec-Ch-Ua": "\"Not A(Brand\";v=\"99\", \"Google Chrome\";v=\"121\", \"Chromium\";v=\"121\"",
                  "Sec-Ch-Ua-Mobile": "?0", 
                  "Sec-Ch-Ua-Platform": "\"Windows\"", 
