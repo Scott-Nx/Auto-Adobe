@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    branches-ignore:
-      - "releases/**"
   pull_request:
     type: [opened]
     branches: [main]
