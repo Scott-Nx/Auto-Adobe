@@ -10,7 +10,7 @@ It's a simple request process.
    - `KMUTNB_USERNAME=s6601234567890`
    - `KMUTNB_PASSWORD=your_password_here`
 
-   2.1 If `payload.py` is not working, use `Payload_nodotenv` instead. Remove the dotenv file code and edit the username and password directly in the payload file. Save the file, but be cautious not to publish your password publicly.
+   2.1 If `payload.py` is not working, Remove the dotenv file code and edit the username and password directly in the payload file. Save the file, but be cautious not to publish your password publicly.
    
 3. Add the GitHub Action workflow to the repository.
 4. Done!
