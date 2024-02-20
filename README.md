@@ -1,21 +1,16 @@
 # Adobe KMUTNB
-Automated grant Adobe acess for KMUTNB Student
-## How it work?
-Urmmm, its just simple request lol.
+Automated grant Adobe access for KMUTNB students
+
+## How it works?
+It's a simple request process.
 
 ## How to use?
-1. Fork This project
-2. Create Secret in Repository secrets
-   
-   Repository secrets:
-   
-   `KMUTNB_USERNAME=s6601234567890`
-   
-   `KMUTNB_PASSWORD=your_password_here`
+1. Fork this project.
+2. Create secrets in the repository secrets:
+   - `KMUTNB_USERNAME=s6601234567890`
+   - `KMUTNB_PASSWORD=your_password_here`
 
-
-   2.1 using "Payload_nodotenv" (if payload.py not working.)
-      so, this file dotenv file code are removed
-      you can edit username , password into payload file and save // Warning: do not publish your password on public.
-4. Add Github Action workflow into repo
-5. Done!
+   2.1 If `payload.py` is not working, use `Payload_nodotenv` instead. Remove the dotenv file code and edit the username and password directly in the payload file. Save the file, but be cautious not to publish your password publicly.
+   
+3. Add the GitHub Action workflow to the repository.
+4. Done!
