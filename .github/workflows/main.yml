@@ -2,6 +2,8 @@ name: Automatic get Adobe from Software KMUTNB
 
 on:
   push:
+    branches:
+      - main
     branches-ignore:
       - "releases/**"
   pull_request:
