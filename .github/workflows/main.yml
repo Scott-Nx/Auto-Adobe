@@ -8,7 +8,7 @@ on:
     type: [opened]
     branches: [main]
   schedule:
-    - cron: "0 22 * * 0"
+    - cron: "0 22 1 * *"
 
 jobs:
   build:
