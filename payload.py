@@ -16,23 +16,11 @@ password = os.getenv("KMUTNB_PASSWORD")
 
 # HEADERS PAYLOAD
 payload_headers = {
-    "Cache-Control": "max-age=0",
-    "Sec-Ch-Ua": '"Not A(Brand";v="99", "Google Chrome";v="121", "Chromium";v="121"',
-    "Sec-Ch-Ua-Mobile": "?0",
-    "Sec-Ch-Ua-Platform": '"Windows"',
-    "Upgrade-Insecure-Requests": "1",
-    "Origin": "https://software.kmutnb.ac.th",
     "Content-Type": "application/x-www-form-urlencoded",
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-    "Sec-Fetch-Site": "same-origin",
-    "Sec-Fetch-Mode": "navigate",
-    "Sec-Fetch-User": "?1",
-    "Sec-Fetch-Dest": "document",
+    "Origin": "https://software.kmutnb.ac.th",
     "Referer": "https://software.kmutnb.ac.th/login/",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Accept-Language": "th-TH,th;q=0.9",
-    "Connection": "close",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
 
 # DATA PAYLOAD
@@ -41,23 +29,10 @@ payload_data = {"myusername": username, "mypassword": password, "Submit": ""}
 # HEADER AND DATA (Adobe Process)
 adobe_url = "https://software.kmutnb.ac.th:443/adobe-reserve/add2.php"
 adobe_headers = {
-    "Cache-Control": "max-age=0",
-    "Sec-Ch-Ua": '"Not A(Brand";v="99", "Google Chrome";v="121", "Chromium";v="121"',
-    "Sec-Ch-Ua-Mobile": "?0",
-    "Sec-Ch-Ua-Platform": '"Windows"',
-    "Upgrade-Insecure-Requests": "1",
-    "Origin": "https://software.kmutnb.ac.th",
     "Content-Type": "application/x-www-form-urlencoded",
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-    "Sec-Fetch-Site": "same-origin",
-    "Sec-Fetch-Mode": "navigate",
-    "Sec-Fetch-User": "?1",
-    "Sec-Fetch-Dest": "document",
+    "Origin": "https://software.kmutnb.ac.th",
     "Referer": "https://software.kmutnb.ac.th/adobe-reserve/processa.php",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Accept-Language": "th-TH,th;q=0.9",
-    "Connection": "close",
 }
 
 adobe_data = {
