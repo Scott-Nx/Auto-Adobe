@@ -27,4 +27,4 @@ jobs:
           echo "KMUTNB_PASSWORD=${{ secrets.KMUTNB_PASSWORD }}" >> .env
 
       - name: Start Payload
-        run: python payload.py
+        run: python src/payload.py
