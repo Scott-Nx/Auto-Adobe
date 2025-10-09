@@ -1,9 +1,6 @@
 name: Borrow License from Software KMUTNB
 
 on:
-  pull_request:
-    types: [opened]
-    branches: [main]
   schedule:
     - cron: "0 22 1 * *"
 
