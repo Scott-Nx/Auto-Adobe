@@ -12,23 +12,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v4.2.2
 
-    - name: Set up Python 3.13
-      uses: actions/setup-python@v5.6.0
-      with:
-        python-version: 3.13
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5.6.0
+        with:
+          python-version: 3.13
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests python-dotenv
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests python-dotenv
 
-    - name: Create env file
-      run: |
-        echo "KMUTNB_USERNAME=${{ secrets.KMUTNB_USERNAME }}" >> .env
-        echo "KMUTNB_PASSWORD=${{ secrets.KMUTNB_PASSWORD }}" >> .env
-        cat .env
+      - name: Create env file
+        run: |
+          echo "KMUTNB_USERNAME=${{ secrets.KMUTNB_USERNAME }}" >> .env
+          echo "KMUTNB_PASSWORD=${{ secrets.KMUTNB_PASSWORD }}" >> .env
+          cat .env
 
-    - name: Running Payload
-      run: python payload.py
+      - name: Running Payload
+        run: python payload.py
