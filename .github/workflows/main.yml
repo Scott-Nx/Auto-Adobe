@@ -28,7 +28,6 @@ jobs:
         run: |
           echo "KMUTNB_USERNAME=${{ secrets.KMUTNB_USERNAME }}" >> .env
           echo "KMUTNB_PASSWORD=${{ secrets.KMUTNB_PASSWORD }}" >> .env
-          cat .env
 
       - name: Running Payload
         run: python payload.py
