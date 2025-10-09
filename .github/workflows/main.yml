@@ -1,4 +1,4 @@
-name: Automatic get Adobe from Software KMUTNB
+name: Borrow License from Software KMUTNB
 
 on:
   pull_request:
