@@ -8,6 +8,11 @@ This repository contains a minimal Python script that:
 
 Intended audience: students and staff who already have legitimate access and permissions granted by KMUTNB. Use responsibly and in accordance with the university policies and the website's terms of service.
 
+> [!CAUTION]
+> ## Legal and ethical notice
+>
+> This script is provided for personal convenience where automation is permitted. You are responsible for complying with KMUTNB policies and all applicable terms of service. Do not use this script to circumvent security, access controls, or usage limits.
+
 ## How it works
 
 High-level flow:
@@ -87,8 +92,3 @@ You can run the script on a schedule to keep your reservation active or to autom
 - Use a separate, least-privilege account for automation if possible.
 - When scheduling, ensure the account running the task has access to the `.env` securely and that logs do not dump secrets.
 - Prefer enabling SSL verification to mitigate MITM risks.
-
-> [!CAUTION]
-> ## Legal and ethical notice
->
-> This script is provided for personal convenience where automation is permitted. You are responsible for complying with KMUTNB policies and all applicable terms of service. Do not use this script to circumvent security, access controls, or usage limits.
