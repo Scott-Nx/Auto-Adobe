@@ -88,6 +88,7 @@ You can run the script on a schedule to keep your reservation active or to autom
 - When scheduling, ensure the account running the task has access to the `.env` securely and that logs do not dump secrets.
 - Prefer enabling SSL verification to mitigate MITM risks.
 
-## Legal and ethical notice
-
-This script is provided for personal convenience where automation is permitted. You are responsible for complying with KMUTNB policies and all applicable terms of service. Do not use this script to circumvent security, access controls, or usage limits.
+> [!CAUTION]
+> ## Legal and ethical notice
+>
+> This script is provided for personal convenience where automation is permitted. You are responsible for complying with KMUTNB policies and all applicable terms of service. Do not use this script to circumvent security, access controls, or usage limits.
