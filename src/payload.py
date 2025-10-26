@@ -4,9 +4,9 @@ import os
 from datetime import date as _date
 
 # LOGIN URL VARIABLE
-login_url = "https://software.kmutnb.ac.th/login/"
-loggedin_url = "https://software.kmutnb.ac.th/download/"
-adobe_process_url = "https://software.kmutnb.ac.th/adobe-reserve/processa.php"
+LOGIN_URL = "https://software.kmutnb.ac.th/login/"
+LOGGEDIN_URL = "https://software.kmutnb.ac.th/download/"
+ADOBE_PROCESS_URL = "https://software.kmutnb.ac.th/adobe-reserve/processa.php"
 
 # LOAD ENVIRONMENT VARIABLES
 load_dotenv()
@@ -36,13 +36,17 @@ def make_date_expire(dt: _date) -> str:
     accordingly (previous-year logic from original code preserved: decrease year
     by 1 when month == 1).
     """
-    year = (dt.year - 1) if dt.month == 1 else dt.year
-    month = 12 if dt.month == 1 else dt.month + 1
+    if dt.month == 1:
+        year = dt.year - 1
+        month = 12
+    else:
+        year = dt.year
+        month = dt.month + 1
     return f"{year:04d}-{month:02d}-01"
 
 
 # HEADER AND DATA (Adobe Process - final endpoint)
-adobe_url = "https://software.kmutnb.ac.th:443/adobe-reserve/add2.php"
+ADOBE_URL = "https://software.kmutnb.ac.th:443/adobe-reserve/add2.php"
 adobe_headers = {
     "Content-Type": "application/x-www-form-urlencoded",
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
@@ -59,6 +63,6 @@ adobe_data = {
 
 # USING SESSION FOR HOLD SESSION FOR GRANT ADOBE ACCESS
 with rq.session() as rqss:
-    rqss.post(login_url, headers=payload_headers, data=payload_data, verify=False)
-    req3 = rqss.post(adobe_url, headers=adobe_headers, data=adobe_data, verify=False)
+    rqss.post(LOGIN_URL, headers=payload_headers, data=payload_data, verify=False)
+    req3 = rqss.post(ADOBE_URL, headers=adobe_headers, data=adobe_data, verify=False)
     print(req3.text)
