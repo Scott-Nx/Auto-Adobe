@@ -1,12 +1,14 @@
-import requests as rq
-from dotenv import load_dotenv
 import os
 from datetime import date as _date
 
-# LOGIN URL VARIABLE
+import requests as rq
+from dotenv import load_dotenv
+
+# LOGIN URL VARIABLES
 LOGIN_URL = "https://software.kmutnb.ac.th/login/"
 LOGGEDIN_URL = "https://software.kmutnb.ac.th/download/"
 ADOBE_PROCESS_URL = "https://software.kmutnb.ac.th/adobe-reserve/processa.php"
+ADOBE_URL = "https://software.kmutnb.ac.th:443/adobe-reserve/add2.php"
 
 # LOAD ENVIRONMENT VARIABLES
 load_dotenv()
@@ -46,7 +48,6 @@ def make_date_expire(dt: _date) -> str:
 
 
 # HEADER AND DATA (Adobe Process - final endpoint)
-ADOBE_URL = "https://software.kmutnb.ac.th:443/adobe-reserve/add2.php"
 adobe_headers = {
     "Content-Type": "application/x-www-form-urlencoded",
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0",
@@ -63,6 +64,6 @@ adobe_data = {
 
 # USING SESSION FOR HOLD SESSION FOR GRANT ADOBE ACCESS
 with rq.session() as rqss:
-    rqss.post(LOGIN_URL, headers=payload_headers, data=payload_data, verify=False)
+    _ = rqss.post(LOGIN_URL, headers=payload_headers, data=payload_data, verify=False)
     req3 = rqss.post(ADOBE_URL, headers=adobe_headers, data=adobe_data, verify=False)
     print(req3.text)
