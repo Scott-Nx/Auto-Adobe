@@ -1,11 +1,12 @@
 import requests as rq
 from dotenv import load_dotenv
 import os
+from datetime import date as _date
 
 # LOGIN URL VARIABLE
 login_url = "https://software.kmutnb.ac.th/login/"
 loggedin_url = "https://software.kmutnb.ac.th/download/"
-adobe_url = "https://software.kmutnb.ac.th/adobe-reserve/processa.php"
+adobe_process_url = "https://software.kmutnb.ac.th/adobe-reserve/processa.php"
 
 # LOAD ENVIRONMENT VARIABLES
 load_dotenv()
@@ -26,7 +27,21 @@ payload_headers = {
 # DATA PAYLOAD
 payload_data = {"myusername": username, "mypassword": password, "Submit": ""}
 
-# HEADER AND DATA (Adobe Process)
+
+# Helper to compute the first day of the next month (with year rollover)
+def make_date_expire(dt: _date) -> str:
+    """
+    Return a string in YYYY-MM-01 format representing the first day of the month
+    following the given date `dt`. If `dt` is in January, adjust the year
+    accordingly (previous-year logic from original code preserved: decrease year
+    by 1 when month == 1).
+    """
+    year = (dt.year - 1) if dt.month == 1 else dt.year
+    month = 12 if dt.month == 1 else dt.month + 1
+    return f"{year:04d}-{month:02d}-01"
+
+
+# HEADER AND DATA (Adobe Process - final endpoint)
 adobe_url = "https://software.kmutnb.ac.th:443/adobe-reserve/add2.php"
 adobe_headers = {
     "Content-Type": "application/x-www-form-urlencoded",
@@ -37,7 +52,7 @@ adobe_headers = {
 
 adobe_data = {
     "userId": "",
-    "date_expire": (lambda _d: f"{(_d.year-1) if _d.month==1 else _d.year:04d}-{12 if _d.month==1 else _d.month+1:02d}-01")(__import__('datetime').date.today()),
+    "date_expire": make_date_expire(_date.today()),
     "status_number": "0",
     "Submit_get": "",
 }
