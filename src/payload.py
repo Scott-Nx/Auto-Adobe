@@ -37,7 +37,7 @@ adobe_headers = {
 
 adobe_data = {
     "userId": "",
-    "date_expire": "2025-10-01",
+    "date_expire": (lambda _d: f"{(_d.year-1) if _d.month==1 else _d.year:04d}-{12 if _d.month==1 else _d.month+1:02d}-01")(__import__('datetime').date.today()),
     "status_number": "0",
     "Submit_get": "",
 }
